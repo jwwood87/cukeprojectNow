@@ -3,7 +3,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 /**
- * Created by John on 12/3/2016.
+ * Created by John on 12/3/2016. Test
  */
 public class StepDefinitions {
     @Given("^sample feature file is ready$")
