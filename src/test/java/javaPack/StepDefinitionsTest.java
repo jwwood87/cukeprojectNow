@@ -1,3 +1,5 @@
+package javaPack;
+
 import org.junit.Test;
 
 /**
