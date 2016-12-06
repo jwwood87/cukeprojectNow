@@ -1,4 +1,4 @@
-
+@smokeTest
 Feature: This feature is my first cucumber test
   This is a description for the feature
 
@@ -10,7 +10,7 @@ Feature: This feature is my first cucumber test
     When I run the feature file
     Then run should be successful
 
-  @smokeTest
+
   Scenario: This is my 2nd Cucumber scenario
   This is a description for the sample.feature's second scenario
 

@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         // Configure cucumber so that the specified feature file is executed
-        features = "src/test/resources/sample.feature",
+        features = "src/test/resources/",
         // Configure cucumber to locate the package of the glue code , e.g. step definitions
         glue = "javaPack",
         // Configure cucumber so that an HTML test test report is generated in the target folder
