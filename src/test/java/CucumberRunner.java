@@ -1,3 +1,7 @@
+package java;
+/**
+ * Created by John on 12/6/2016.
+ */
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
@@ -7,8 +11,21 @@ import org.junit.runner.RunWith;
  */
 
 @RunWith(Cucumber.class)
-@CucumberOptions(format={"pretty","html:reports/test-report"},tags="@smokeTest")
+@CucumberOptions(
+        // Configure cucumber so that the specified feature file is executed
+        features = "src/test/resources/sample.feature",
+        // Configure cucumber to locate the package of the glue code , e.g. step definitions
+        // Todo. Can't get next line to work...may be related to not be able to use "package" in the code
+        glue = "java",
+        // Configure cucumber so that an HTML test test report is generated in the target folder
+        plugin = {"html:target/cucumber-report",
+                "pretty:target/cucumber-pretty.txt",
+                "usage:target/cucumber-usage.json",
+                "junit:target/cucumber-results.xml"},
+        tags = {"@smokeTest"},
+        monochrome = false
+)
 public class CucumberRunner {
 
-
 }
+
