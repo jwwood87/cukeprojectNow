@@ -37,7 +37,18 @@ public class StepDefinitions {
         System.out.println("The test is successful"); }
 
     @Then("^run should be really successful$")
-    public void thenReallyStatement(){
+    public void thenReallyStatement() {
          System.out.println("The test is really successful");
+    }
+
+    @When("^I parse a string, \"([^\"]*)\", for the count of the character, \"([^\"]*)\"$")
+    public void countTheString(String stringThing, char myChar) {
+        System.out.println("We're gonna see how many of the character, \"" + myChar + "\" are present");
+        int myCount=0;
+        for (int i =0;i<stringThing.length();i++){
+            if (stringThing.charAt(i)==myChar)
+                myCount++;
+        }
+        System.out.println("The string \"" + stringThing + "\" has " + myCount + " \"" + myChar + "\" characters.");
     }
 }
