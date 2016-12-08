@@ -1,10 +1,9 @@
-
 Feature: This feature is my first cucumber test
   This is a description for the feature
 
 
   Scenario: This is my first Cucumber scenario
-    This is a description for the sample.feature's first scenario
+  This is a description for the sample.feature's first scenario
 
     Given sample feature file is ready
     When I run the feature file
@@ -19,7 +18,12 @@ Feature: This feature is my first cucumber test
     Then run should be really successful
 
   @smokeTest
-  Scenario: Parse a string
+  Scenario Outline: Parse a string
   This is scenario to demonstrate the ability to parse a string
 
-    Then I parse a string, "SuperCalifragilisticExpialidocious", for the count of the character, "l"
+    When the string, "<theString>" should have "<expCount>" of the character "<theChar>"
+    Examples:
+      | theString                          | theChar | expCount |
+      | SuperCalifragilisticExpialidocious | l       | 3        |
+      | SuperCalifragilisticExpialidocious | S       | 11       |
+      | helloWorld                         | a       | 0        |

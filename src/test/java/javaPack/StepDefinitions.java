@@ -4,6 +4,8 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import static org.junit.Assert.assertEquals;
+
 /**
  * Created by John on 12/3/2016.
  */
@@ -41,14 +43,16 @@ public class StepDefinitions {
          System.out.println("The test is really successful");
     }
 
-    @When("^I parse a string, \"([^\"]*)\", for the count of the character, \"([^\"]*)\"$")
-    public void countTheString(String stringThing, char myChar) {
-        System.out.println("We're gonna see how many of the character, \"" + myChar + "\" are present");
+    @When("^the string, \"([^\"]*)\" should have \"([^\"]*)\" of the character \"([^\"]*)\"$")
+    public void countTheString(String stringThing, int expectCount, char myChar) {
+        System.out.println("\n" + "We're gonna see how many of the character, \"" + myChar + "\" are present");
         int myCount=0;
+        boolean yes;
         for (int i =0;i<stringThing.length();i++){
             if (stringThing.charAt(i)==myChar)
                 myCount++;
         }
         System.out.println("The string \"" + stringThing + "\" has " + myCount + " \"" + myChar + "\" characters.");
+        assertEquals(expectCount,myCount);
     }
 }
