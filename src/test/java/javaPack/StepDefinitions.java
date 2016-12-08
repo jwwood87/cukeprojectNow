@@ -47,7 +47,6 @@ public class StepDefinitions {
     public void countTheString(String stringThing, int expectCount, char myChar) {
         System.out.println("\n" + "We're gonna see how many of the character, \"" + myChar + "\" are present");
         int myCount=0;
-        boolean yes;
         for (int i =0;i<stringThing.length();i++){
             if (stringThing.charAt(i)==myChar)
                 myCount++;
