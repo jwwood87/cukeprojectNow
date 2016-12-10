@@ -8,12 +8,12 @@ import org.junit.runner.RunWith;
 /**
  * Created by John on 12/3/2016.
  */
-
+        // This is the class that runs Cucumber
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        // Configure cucumber so that the specified feature file is executed
+        // Configure cucumber so it can find the specified feature file directory
         features = "src/test/resources/",
-        // Configure cucumber to locate the package of the glue code , e.g. step definitions
+        // Configure cucumber to locate the package of the glue code , e.g. javaPack
         glue = "javaPack",
         // Configure cucumber so that an HTML test test report is generated in the target folder
         plugin = {"html:target/cucumber-report",
