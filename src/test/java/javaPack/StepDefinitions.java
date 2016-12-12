@@ -4,7 +4,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import static javaPack.StepDefinitions2.retunIncludesSearch;
+import static javaPack.supportStepDefinitions.returnIncludesSearch;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -38,8 +38,8 @@ public class StepDefinitions {
     @Then("^run should be successful$")
     public void thenStatement(){
         System.out.println("The test is successful");
-        if (retunIncludesSearch("find","finding Nemo"))
-            System.out.println("We found Nemo " + "\n");
+        if (returnIncludesSearch("find","finding Nemo"))
+            System.out.println("Run should have been successful, and it was." + "\n");
     }
 
     @Then("^run should be really successful$")
