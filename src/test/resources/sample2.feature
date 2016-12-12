@@ -1,4 +1,4 @@
-@smokeTest
+
 Feature: This feature is my second cucumber test
   This is a description for the feature
 
@@ -17,7 +17,7 @@ Feature: This feature is my second cucumber test
     When I really run the silly feature file
     Then run should be sillysuccessful
 
-
+  @smokeTest
   Scenario Outline: This is my test to support Keith's request
     Keith asked me to write code for a Google Search
 
