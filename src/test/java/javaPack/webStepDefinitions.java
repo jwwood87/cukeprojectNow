@@ -1,5 +1,7 @@
 package javaPack;
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -21,21 +23,20 @@ public class webStepDefinitions {
 
     WebDriver driver;
 
-//    @BeforeClass
-//    public void setup () {
-//        System.out.println("\n" + "Hi, from within the Before setup method.");
-//        driver = new FirefoxDriver();
-//        System.setProperty("webdriver.gecko.driver","C:\\Program Files\\Selenium\\geckodriver.exe");
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-//        driver.manage().window().maximize();
-//
-//    }
-//
-//    @AfterClass
-//    public void afterTest() {
-//        System.out.println("\n" + "Bye, from within the After afterTest method.");
-//        driver.quit();
-//    }
+    @Before
+    public void setup () {
+        System.out.println("\n" + "Hi, from within the Before setup method.");
+        // Set property for geckodriver, launch browser and set the implicit wait to 5 seconds
+        System.setProperty("webdriver.gecko.driver","C:\\Program Files\\Selenium\\geckodriver.exe");
+        driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    }
+
+    @After
+    public void afterTest() {
+        System.out.println("\n" + "Bye, from within the After afterTest method.");
+        driver.quit();
+    }
 
     @Test
     public void test1() throws InterruptedException {
@@ -44,10 +45,7 @@ public class webStepDefinitions {
 
     @Given("^I launch a browser$")
     public void i_launch_a_browser() throws Throwable {
-        // Launch browser and navigate to Google's main web page
-        driver = new FirefoxDriver();
-        System.setProperty("webdriver.gecko.driver","C:\\Program Files\\Selenium\\geckodriver.exe");
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
         driver.manage().window().maximize();
     }
 
@@ -99,12 +97,7 @@ public class webStepDefinitions {
             searchResultPresent=true;
         } else
             System.out.println("The 4th result does not include the pattern." + "\n");
-        if (searchResultPresent==true)
-            assertTrue(true);
-        else {
-            driver.quit();
-            assertTrue(searchResultPresent);
-        }
+        assertTrue(searchResultPresent);
     }
 
     @Then("^I close the browser$")
