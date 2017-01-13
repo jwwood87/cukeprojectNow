@@ -27,5 +27,12 @@ Feature: This feature is my first cucumber test
     Examples:
       | theString                          | theChar | expCount |
       | SuperCalifragilisticExpialidocious | l       | 3        |
-#      | SuperCalifragilisticExpialidocious | S       | 11       |
+      | SuperCalifragilisticExpialidocious | S       | 11       |
       | helloWorld                         | a       | 0        |
+
+  @smokeTest
+    Scenario: Try Groovy Cucumber
+      This is to prove tha Groovy and Java classes can work side-by-side within a Cucumber project
+
+      When Hello World
+      Then We parse

@@ -15,7 +15,7 @@ Feature: This feature encapsulates browser interactions
       | any search    |
       | Ugly Code     |
 
-  @smokeTest
+  @smoke
     Scenario: List of Gherkin web navigation statements
       This scenario provides examples of the implemented gherkin statements used to direct a browser
 
