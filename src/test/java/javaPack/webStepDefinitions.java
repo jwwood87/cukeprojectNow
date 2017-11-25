@@ -28,7 +28,7 @@ public class webStepDefinitions {
     @Before
     public void setup () {
         // Set property for geckodriver, launch browser and set the implicit wait to 5 seconds; first line for PC; second line for Mac
-//        System.setProperty("webdriver.gecko.driver","C:\\Program Files\\Selenium\\geckodriver.exe");
+        // System.setProperty("webdriver.gecko.driver","C:\\Program Files\\Selenium\\geckodriver.exe");
         System.setProperty("webdriver.gecko.driver","/Users/a84558/SoftwareAndPlugins/Selenium/geckodriver");
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
