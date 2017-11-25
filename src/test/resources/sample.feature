@@ -18,7 +18,7 @@ Feature: This feature is my first cucumber test
     When I really run the feature file
     Then run should be really successful
 
-
+  @smokeTest
   Scenario Outline: Parse a string
     This is scenario to demonstrate the ability to parse a string
 
@@ -30,9 +30,12 @@ Feature: This feature is my first cucumber test
       | SuperCalifragilisticExpialidocious | S       | 11       |
       | helloWorld                         | a       | 0        |
 
-  @smokeTest
+
     Scenario: Try Groovy Cucumber
       This is to prove tha Groovy and Java classes can work side-by-side within a Cucumber project
 
       When Hello World
       Then We parse
+      Then the JSON element "version[0]" has a value of "3.0.2"
+      Then the JSON element "response" contains an object that include "returnCode"
+      Then the JSON object "itemserviceresult" contains "3" arrays
